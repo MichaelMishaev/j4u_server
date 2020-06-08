@@ -1,0 +1,31 @@
+[2020-01-24T14:44:42.464] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2020-01-24T14:44:45.966] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T14:44:45.988] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T14:45:21.604] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T14:45:21.628] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T14:45:38.640] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T14:45:38.651] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:26:33.068] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2020-01-24T15:29:29.313] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:29:29.345] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:29:53.368] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:29:53.435] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:31:42.044] [ERROR] cheese - Caught exception: ReferenceError: bot is not defined
+[2020-01-24T15:40:30.678] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2020-01-24T15:45:25.628] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:45:25.705] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:47:25.633] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:47:25.706] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:52:43.450] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:52:43.475] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:53:01.102] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:53:01.165] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:55:01.105] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:55:01.167] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:55:37.977] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T15:55:38.011] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2020-01-24T16:16:34.842] [ERROR] cheese - Caught exception: ReferenceError: bot is not defined
+[2020-01-24T16:18:19.649] [ERROR] cheese - Caught exception: ReferenceError: bot is not defined
+[2020-01-24T16:23:53.808] [ERROR] cheese - Caught exception: ReferenceError: bot is not defined
+[2020-01-24T16:25:46.336] [ERROR] cheese - Caught exception: ReferenceError: bot is not defined
+[2020-01-25T09:19:28.177] [ERROR] cheese - Caught exception: Error: read ECONNRESET
