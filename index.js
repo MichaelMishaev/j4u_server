@@ -21,14 +21,14 @@
 });
   var s3 = new AWS.S3({
     params: {
-      Bucket: 'j4r-eu'
+      Bucket: 'j4u-eu'
     }
   });
 
   var upload = multer({
     storage: multerS3({
       s3: s3,
-      bucket: 'j4r-eu',
+      bucket: 'j4u-eu',
       metadata: function (req, file, cb) {
         cb(null, {fieldName: file.fieldname});
       },
@@ -126,7 +126,7 @@
   // initialze an instance of Sequelize
   const sequelize = new Sequelize({
     host:'localhost',
-    database: 'j4r',
+    database: 'j4u',
     username: 'j4r',
     password: 'Alina96!!',
     dialect: 'mysql',
@@ -136,7 +136,7 @@
       host: "localhost",
       user: "j4r",
       password: "Alina96!!",
-      database : 'j4r',
+      database : 'j4u',
       multipleStatements: true
   };
 
@@ -821,7 +821,7 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
   app.get('/download',passport.authenticate('jwt', { session: false }), function(req, res){
       
     const getParams = {
-      Bucket: 'j4r-eu',
+      Bucket: 'j4u-eu',
       Key: req.query.fileName
     };
     
