@@ -13,7 +13,6 @@
   var app = express();
   var multer  = require('multer');
   var multerS3 = require('multer-s3')
-
   AWS.config.update({
     secretAccessKey: 'pFCgFDp1fmpAxka9onFcnfMMp77VG4Y2RdLe2CXQ',
     accessKeyId: 'AKIAI5J3W4DWTUKRDKVA',
@@ -179,9 +178,12 @@
   // use it before all   definitions
   //app.use(cors({origin: 'http://localhost:4200'}));
   const sitecors = {
-    origin: ['https://jobs4home.net','http://3.125.167.138','https://www.jobs4home.net','https://j4u.works','https://www.j4u.works','http://localhost:4200'],
+    origin: ['https://jobs4home.net','http://3.125.167.138','http://3.127.25.25',
+      'https://www.jobs4home.net','https://j4u.works','https://www.j4u.works','http://localhost:4200'],
     defaul: 'https://jobs4home.net'
   }
+
+
   app.use(function (req, res, next) {
     console.log(req.header('host').toLowerCase());
       var origin = sitecors.origin.indexOf(req.header('host').toLowerCase()) > -1 ? req.headers.origin : sitecors.defaul;
@@ -470,7 +472,15 @@
         }
     });
   }
+  app.post("/generalMessages",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    var message = req.body.message;
+    var sql = `INSERT INTO generalmessages (Message,IsActive) values(${mysql.escape(message)},1)`;
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        res.json(result);
+    });
 
+  });
   app.post("/job",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     if (req.headers && req.headers.authorization) {
@@ -545,10 +555,12 @@
         }
     });
   });
+  //todo fix statuses
   app.put("/jobCandidateStatus",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     var status =  d.Status.description || d.Status;
-    var isInternalReject = status == 'lack of details' ? 1 : 0;
+    var isInternalReject = status == 'lack of details' || d.Status.id == 3 ? 1 : 0;
+    console.log('status ' + status + ' is internal reject ' + isInternalReject)
     var isAddBonus = status == 'Resume sent'
     var historySql = `INSERT INTO JobCandidateHistory (JobCandidateId,Status,StatusDescription,InternalRemarks)
                      Values('${d.jobCandidateId}','${status}','${d.StatusDescription || ''}','${d.InternalRemarks || ''}')`;
@@ -667,7 +679,13 @@
           res.json(result);
       });
   });
-
+  app.get("/usersBase",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    var sql = `SELECT Id,FullName,Email FROM  Users WHERE IsActive = 1 and UserType = 1`;
+    con.query(sql,async function (err, result) {
+        if (err) throw err;
+        res.json(result);
+    });
+});
   app.get("/poolCandidates",passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
@@ -737,13 +755,13 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
     try{
       var user = req.body;
       var isPool = req.query.p == 'true' ? 1 : 0;
-      var sql = `INSERT INTO Candidate (FirstName,LastName,City,Email,PhoneNumber,UserId,HasCV,internalComments,IsFromPool,Country,VisaDueDate) Values(?,?,?,?,?,?,?,?,?,?,?)`;
+      var sql = `INSERT INTO Candidate (FirstName,LastName,City,Email,PhoneNumber,UserId,HasCV,internalComments,IsFromPool) Values(?,?,?,?,?,?,?,?,?)`;
       if(updateOnDuplicate){
         sql += ` ON DUPLICATE KEY UPDATE FirstName=VALUES(FirstName), City=VALUES(City),
                  Email=VALUES(Email), PhoneNumber=VALUES(PhoneNumber), UserId=VALUES(UserId), HasCV=VALUES(HasCV), internalComments=VALUES(internalComments),
-                 IsFromPool=VALUES(IsFromPool),Country=VALUES(Country),VisaDueDate=VALUES(VisaDueDate)`
+                 IsFromPool=VALUES(IsFromPool)`
       }
-      var userData = [user.FirstName,user.LastName,user.City,user.Email,user.PhoneNumber, req.query.u, user.HasCV || 0,user.InternalComments || '',isPool, user.Country || '', user.VisaDueDate || '' ];
+      var userData = [user.FirstName,user.LastName,user.City,user.Email,user.PhoneNumber, req.query.u, user.HasCV || 0,user.InternalComments || '',isPool ];
       con.query(sql,userData, function (err, result) {
           if (err){
             res.json(err);
@@ -790,13 +808,24 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
     }
     
   });
+  app.post("/notifications",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+    var d = req.body
+    var sql = `INSERT INTO notifications  (UserId,Message,IsRead) Values (${d.userId},'${d.message}', 0)`;
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      res.json({});       
+    });
+  })
   app.put("/candidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
       var user = req.body;
       var sql = `UPDATE Candidate SET FirstName = ` +mysql.escape(user.FirstName)+ `, LastName = `+ mysql.escape(user.LastName)+`, City = `+mysql.escape(user.City)+`
                 , Email= '`+user.Email+`',PhoneNumber = '`+user.PhoneNumber+`', FileExtension='`+user.FileExtension+`',UserRemark = '`+ user.UserRemark+`', HasCV = `+user.HasCV+`
       WHERE ID = `+user.Id+``;
+
       con.query(sql, function (err, result) {
-          if (err) throw err;
+          if (err){
+            throw err
+          };
           res.json(result);
       });
   });
@@ -912,7 +941,7 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
         var authorization = req.headers.authorization.split(' ')[1];
         decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
 
-        var sql = `SELECT j.Status,j.CreatedAt, jc.JobName, Concat(c.FirstName,' ', c.LastName) AS CandidateName
+        var sql = `SELECT j.Status,j.CreatedAt,j.StatusDescription,j.InternalRemarks, jc.JobName, Concat(c.FirstName,' ', c.LastName) AS CandidateName
                   FROM jobcandidatehistory j
                   inner join jobCandidate jc
                   on j.jobCandidateId = jc.Id
@@ -920,6 +949,27 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
                   on jc.CandidateId = c.Id
                   WHERE jc.UserId = ${decoded.id} and 
                   j.Status != 'Update from agent'`;
+                  con.query(sql, function (err, result) {
+                    if (err) throw err;
+                    res.json(result);
+                  });
+      }
+      catch (e) {
+        return res.status(401).send('unauthorized');
+      }
+    }
+  });
+  app.get("/notifications", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+
+    if (req.headers && req.headers.authorization) {
+      
+      try {
+        var authorization = req.headers.authorization.split(' ')[1];
+        decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
+
+        var sql = `SELECT *
+                  FROM notifications n
+                  WHERE n.UserId = ${decoded.id}`;
                   con.query(sql, function (err, result) {
                     if (err) throw err;
                     res.json(result);
