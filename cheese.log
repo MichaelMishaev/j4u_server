@@ -29,3 +29,344 @@
 [2020-01-24T16:23:53.808] [ERROR] cheese - Caught exception: ReferenceError: bot is not defined
 [2020-01-24T16:25:46.336] [ERROR] cheese - Caught exception: ReferenceError: bot is not defined
 [2020-01-25T09:19:28.177] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2023-10-10T00:38:14.089] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3001
+[2023-10-13T12:27:09.664] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-13T15:31:54.557] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-13T18:43:40.905] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-13T21:55:32.469] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T14:19:43.899] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:49:21.678] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:49:47.641] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'c.FileExtension' in 'field list'
+[2023-10-14T15:55:24.566] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:55:24.876] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'c.FileExtension' in 'field list'
+[2023-10-14T15:56:29.152] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:56:39.327] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:56:58.358] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:58:41.314] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:58:45.990] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:58:51.909] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:58:57.721] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T15:59:03.055] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:02:45.235] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:13:06.577] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:14:04.696] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:42:04.310] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:42:15.579] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:44:03.018] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:44:13.785] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:44:48.371] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:45:57.352] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:47:09.176] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:48:28.336] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:48:35.494] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:49:34.214] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:49:58.740] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T16:50:08.674] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T19:53:36.967] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-14T23:05:13.609] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T00:14:05.213] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:39:33.395] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:39:47.831] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:40:11.138] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:41:17.624] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:44:02.972] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:44:23.319] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:47:52.266] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T01:50:51.766] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:07:33.016] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:10:21.149] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:12:13.129] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:13:59.084] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:15:11.639] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:15:21.586] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:15:54.493] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:16:00.872] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:16:05.876] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:19:59.378] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:24:18.212] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:25:41.038] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:26:07.651] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:26:22.286] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:33:18.259] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:35:03.772] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:38:26.644] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:41:09.795] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:41:14.924] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:41:21.726] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:41:26.668] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:41:34.983] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:41:48.380] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:41:55.089] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:42:00.656] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:42:07.139] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:42:44.136] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:42:49.127] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:42:55.162] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:43:01.725] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:46:31.987] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:48:07.713] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:48:22.358] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:48:27.191] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:48:32.580] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:58:25.183] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:58:56.859] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T02:59:29.229] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T03:01:34.841] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T03:02:26.016] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T06:05:09.091] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T09:16:54.919] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T09:55:31.781] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T10:11:45.687] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T10:39:41.509] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T10:50:22.028] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T10:51:13.438] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544345545-2667' for key 'candidate.PhoneNumber_UserId'
+[2023-10-15T10:54:05.812] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T10:54:06.384] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:13:44.518] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:13:46.416] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:31:28.065] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:31:30.343] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:31:43.233] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:33:34.426] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:33:51.431] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:33:58.511] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:00.943] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:09.214] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:15.441] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:26.004] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:34.377] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:41.390] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:48.729] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:39:52.069] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:40:10.465] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:40:14.874] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:41:00.078] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:41:00.857] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:41:08.100] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:41:14.333] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:41:21.766] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:41:28.598] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:43:27.157] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:44:06.414] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:44:21.070] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:44:31.700] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:44:39.099] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:44:43.104] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:45:34.555] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:45:35.703] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:46:04.809] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:46:06.397] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:46:40.493] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:46:43.742] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:46:50.665] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T11:46:52.581] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T14:52:18.297] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-15T18:04:06.858] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-16T16:24:59.440] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-16T16:33:28.744] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544654456-1052' for key 'candidate.PhoneNumber_UserId'
+[2023-10-16T16:42:36.944] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-16T16:44:16.851] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-16T16:48:31.648] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-16T16:52:52.693] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-16T16:53:05.110] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:07:01.431] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:09:01.979] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T17:10:02.601] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:10:28.250] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T17:12:44.375] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:13:00.912] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:14:54.735] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:19:06.765] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:45:58.519] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T17:50:40.745] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T17:51:08.614] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T17:58:04.688] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T23:27:21.695] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T23:31:34.404] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T23:32:18.315] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T23:35:30.968] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T23:36:53.104] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T23:38:00.584] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T23:40:52.222] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T23:46:49.780] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T23:46:55.373] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T23:49:52.718] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-17T23:50:00.541] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-17T23:50:59.064] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-18T16:50:15.031] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-18T16:52:29.838] [ERROR] cheese - Caught exception: TypeError: Cannot read properties of null (reading 'isActive')
+[2023-10-18T16:53:04.881] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-18T16:53:36.048] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-18T16:53:38.039] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544544564-8' for key 'candidate.PhoneNumber_UserId'
+[2023-10-18T17:00:44.117] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-18T17:02:10.054] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'FileExtension' in 'field list'
+[2023-10-18T17:05:31.043] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-18T17:07:40.496] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-18T17:08:59.110] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-22T21:29:46.519] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-23T00:32:15.763] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-24T21:53:25.220] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-25T01:51:22.344] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-25T01:53:03.802] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-25T01:55:06.016] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-25T02:08:51.931] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-10-25T02:14:55.393] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-10T22:50:08.962] [ERROR] cheese - Caught exception: Error: Packets out of order. Got: 0 Expected: 3
+[2023-11-14T15:28:28.022] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:12:19.424] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:13:11.352] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:34:34.227] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:38:42.278] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:40:38.566] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:51:15.431] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:51:59.343] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:52:50.037] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-22T23:58:32.057] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:00:23.261] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:00:24.622] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:00:44.379] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:00:46.519] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:01:58.817] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:02:00.697] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:02:22.957] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:02:58.633] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:02:59.498] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:03:05.150] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:03:08.904] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:03:13.120] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:03:35.698] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:03:37.434] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:03:52.855] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:04:10.293] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:04:14.837] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:04:37.298] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:05:20.159] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:05:26.812] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:05:27.237] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:05:49.764] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:05:54.656] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:09:24.522] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:13:52.637] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:13:52.769] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-23T00:14:07.965] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:14:27.997] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:14:28.196] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:23:15.946] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:27:53.696] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:29:51.667] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:31:27.139] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:33:04.759] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:35:37.949] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:44:15.912] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:52:39.723] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-24T09:52:49.705] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-26T22:19:06.552] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-26T22:19:32.580] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:16:43.733] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:23:40.288] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:31:01.885] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2023-11-28T17:31:01.890] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2023-11-28T17:31:20.035] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:37:43.282] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:38:33.468] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:39:52.324] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:41:08.915] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:44:27.999] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:47:42.078] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:48:10.615] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:49:56.921] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:49:59.437] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:50:19.653] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:51:52.172] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:51:55.909] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:51:58.529] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-11-28T17:52:16.072] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:05:11.841] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:05:55.123] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:20:30.697] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:34:57.870] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:35:44.720] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:37:54.034] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:38:28.480] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:50:22.499] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3000
+[2023-12-01T01:50:22.503] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3001
+[2023-12-01T01:52:34.718] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T01:59:26.678] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T02:00:02.787] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T02:04:32.293] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T02:04:35.293] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T02:04:44.456] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T05:07:37.788] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T05:07:39.983] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T08:19:22.839] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T08:19:27.396] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T11:31:18.340] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T11:31:23.538] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T14:43:14.526] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T14:43:19.304] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T17:55:10.388] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T17:55:15.516] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T21:07:06.376] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-01T21:07:11.472] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-02T00:19:08.539] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-02T03:31:03.350] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:23:50.447] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:37:29.888] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:38:33.655] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:44:39.830] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:44:42.705] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:45:46.513] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:53:38.503] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:53:48.306] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:54:03.889] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:54:09.969] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:54:13.926] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:54:25.719] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:54:28.341] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:55:11.652] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:55:15.553] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:55:26.017] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:55:30.836] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T00:55:35.168] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-03T01:00:43.562] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.notifications' doesn't exist
+[2023-12-12T15:57:13.297] [ERROR] cheese - Caught exception: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'סוכן ${d.UserId} הגיש למשרה ${d.JobId} את מועמד ${d.Candidat' at line 1
+[2023-12-12T15:59:32.845] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'סוכן ${d.UserId} הגיש למשרה ${d.JobId} את מועמד ${d.CandidateId}' in 'field list'
+[2023-12-17T12:51:05.979] [ERROR] cheese - Caught exception: Error: Packets out of order. Got: 0 Expected: 34
+[2023-12-24T14:43:01.907] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3000
+[2023-12-24T14:43:01.924] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3001
+[2023-12-26T13:29:55.453] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3000
+[2023-12-26T13:29:55.459] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3001
+[2023-12-26T13:35:20.040] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+[2023-12-26T13:40:00.449] [ERROR] cheese - Caught exception: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+[2023-12-26T13:42:02.395] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3000
+[2023-12-26T13:42:02.401] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3001
+[2024-01-01T12:03:58.659] [ERROR] cheese - Caught exception: Error: Packets out of order. Got: 0 Expected: 138
+[2024-01-14T23:59:41.767] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T00:01:36.253] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T00:14:45.356] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T15:31:09.128] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T15:31:30.784] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T15:32:03.940] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T15:32:43.110] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T15:33:05.433] [ERROR] cheese - Caught exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2024-01-15T15:42:33.902] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T15:42:38.227] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T15:42:49.723] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T15:42:56.211] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T15:43:11.035] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0987788987-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T15:43:32.232] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0987788987-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:00:47.433] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:00:47.450] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:00:49.409] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:00:49.430] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:04.375] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:04.389] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:20.250] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:20.267] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:24.537] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:24.563] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:51.421] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:02:51.440] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T16:04:54.342] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-15T20:56:31.841] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
+[2024-01-22T23:53:03.830] [ERROR] cheese - Caught exception: Error: read ECONNRESET

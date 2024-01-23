@@ -4,11 +4,8 @@
   var https = require('https');
   const axios = require('axios');
   const TelegramBot = require('node-telegram-bot-api');
-  //  var privateKey  = fs.readFileSync('/usr/share/pki/ca-trust-source/j4r_co_il_private.key', 'utf8');
-  //  var certificate = fs.readFileSync('/usr/share/pki/ca-trust-source/j4r.co.il.crt', 'utf8');
-
-  
-  const path = require('path');//for local usage _ !update
+   //var privateKey  = fs.readFileSync('/usr/share/pki/ca-trust-source/j4r_co_il_private.key', 'utf8');
+   //var certificate = fs.readFileSync('/usr/share/pki/ca-trust-source/j4r.co.il.crt', 'utf8');
 
   var express = require("express");
   var mysql = require('mysql');
@@ -27,31 +24,18 @@
     }
   });
 
-  var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      // Set the destination folder on the local file system where the uploaded files will be stored.
-      cb(null, './uploads'); // You can change './uploads' to your desired folder path.
-    },
-    filename: function (req, file, cb) {
-      // Set the filename of the uploaded file. In this example, it's using the original filename.
-      cb(null, file.originalname);
-    }
-  });
-
-  var upload=multer({ storage: storage });
-  //Uplad CV to SERVER _ !update
-  //  multer({
-  //   storage: multerS3({
-  //     s3: s3,
-  //     bucket: 'j4u-eu',
-  //     metadata: function (req, file, cb) {
-  //       cb(null, {fieldName: file.fieldname});
-  //     },
-  //     key: function (req, file, cb) {
-  //       cb(null, file.originalname )
-  //     }
-  //   })
-  // })
+  var upload = multer({
+    storage: multerS3({
+      s3: s3,
+      bucket: 'j4u-eu',
+      metadata: function (req, file, cb) {
+        cb(null, {fieldName: file.fieldname});
+      },
+      key: function (req, file, cb) {
+        cb(null, file.originalname )
+      }
+    })
+  })
   const log4js = require('log4js');
   const jwt = require('jsonwebtoken');
   const passport = require('passport');
@@ -61,19 +45,19 @@
 
   var nodemailer = require('nodemailer');
 
-  //var credentials = {key: privateKey, cert: certificate};
+ // var credentials = {key: privateKey, cert: certificate};
 
   // your express configuration here
 
   var httpServer = http.createServer(app);
-  var httpsServer = http.createServer(app);//https.createServer(credentials, app);
+  // var httpsServer = https.createServer(credentials, app);
 
   var jobsUpdateBotToken = '1025824180:AAF3NIo2jAD8ppaN2J64I9OmXPhp7Tci-3M'
   let socketIO = require('socket.io');
   let io = socketIO(httpServer);
-  httpsServer.listen(3000,function(){
-    console.log("server is listen 3000")
-  });
+  // httpsServer.listen(3000,function(){
+  //   console.log("server is listen 3000")
+  // });
   console.log("skip server listen")
 
 
@@ -91,7 +75,7 @@
 
   // lets create our strategy for web token
   let strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
-    let user = getUser({ id: jwt_payload.id });
+    let user = getUser({ id: 1 });//jwt_payload.id 
 
     if (user) {
       next(null, user);
@@ -139,42 +123,28 @@
   // var uploadExcel = multer({ storage: storageExcel })
 
   // initialze an instance of Sequelize
-  // const sequelize = new Sequelize({
-  //   host:'localhost',
-  //   database: 'myjobs',
-  //   username: '345287',
-  //   password: 'Jtbdtjtb6262',
-  //   dialect: 'mysql',
-  // });
 
   const sequelize = new Sequelize({
-    host: "13.51.67.70",
-    user: "admin",
-    password: "asdASDasd",
-    database : 'myjobs',
+    host:'localhost',
+    database: 'myjobs',
+    username: '345287',
+    password: 'Jtbdtjtb6262',
     dialect: 'mysql',
   });
 
 
-  // var db_config = {
-  //     host: "localhost",
-  //     user: "345287",
-  //     password: "Jtbdtjtb6262",
-  //     database : 'myjobs',
-  //     multipleStatements: true
-  // };
   var db_config = {
-    host: "13.51.67.70",
-    user: "admin",
-    password: "asdASDasd",
-    database : 'myjobs',
-    multipleStatements: true
-};
+      host: "localhost",
+      user: "345287",
+      password: "Jtbdtjtb6262",
+      database : 'myjobs',
+      multipleStatements: true
+  };
 
  // const bot = new TelegramBot(jobsUpdateBotToken, {polling: true});
 
   var con;
-debugger;
+
   function handleDisconnect() {
     con = mysql.createConnection(db_config); // Recreate the connection, since
                                                     // the old one cannot be reused.
@@ -238,10 +208,10 @@ debugger;
   });
 
   // check the databse connection
-  sequelize
-    .authenticate()
-    .then(() => console.log('Connection has been established successfully.'))
-    .catch(err => console.error('Unable to connect to the database:', err));
+  // sequelize
+  //   .authenticate()
+  //   .then(() => console.log('Connection has been established successfully.'))
+  //   .catch(err => console.error('Unable to connect to the database:', err));
 
   // create user model
   const User = sequelize.define('user', {
@@ -270,7 +240,7 @@ debugger;
       type: Sequelize.INTEGER
     }
   });
-
+debugger;
   // create table with user model
   User.sync()
     .then(() => console.log('User table created successfully'))
@@ -280,7 +250,7 @@ debugger;
   const createUser = async ({ fullName, password, email,isActive, phoneNumber }) => {
     return await User.create({ fullName, password, email,isActive,phoneNumber });
   };
-
+  debugger;
   const getAllUsers = async () => {
     return await User.findAll();
   };
@@ -357,29 +327,7 @@ debugger;
 
   app.get("/generalMessages",passport.authenticate('jwt', { session: false }), (req, res, next) => {
       
-    var sql = `SELECT Message FROM generalmessages WHERE isactive = 1 and IsForCoordinator = 0`;
-    con.query(sql, function (err, result) {
-        if (err) throw err;
-        res.json(result);
-    });
-
-  });
-
-  app.get("/generalMessagesForCoordinators",passport.authenticate('jwt', { session: false }), (req, res, next) => {
-      
-    var sql =`select * 
-                    from(
-                    SELECT Message AS Message, DateAdded as Date , 0 AS isRead
-                    FROM generalmessages AS gm
-                    WHERE gm.isactive = 1 
-                    AND gm.isforcoordinator=1 
-                    UNION ALL
-                    SELECT  CONCAT('מועמד מספר ', jc.candidateId ,' עודכן סטטוס' ,' המוגש למשרה ', jc.jobId) as Message, jc.updated_at, jc.isRead
-                    FROM JobCandidate as jc
-                    where IsInternalReject = 2 ) as tbl
-                    order by Date desc
-    `
-    //  `SELECT Message AS Message, DateAdded as Date FROM generalmessages WHERE isactive = 1 AND isforcoordinator=1 ORDER BY dateAdded DESC`;
+    var sql = `SELECT Message FROM generalmessages WHERE isactive = 1`;
     con.query(sql, function (err, result) {
         if (err) throw err;
         res.json(result);
@@ -513,24 +461,15 @@ debugger;
  });
   addJobCandidate = (req, res, next) =>{
     var d = req.body;
-    debugger;
     var sql = `INSERT INTO JobCandidate  (CreateDate,JobId,CandidateId,QuestionsAndAnswers,IsSent,UserId,Status,JobName) Values(?,?,?,?,?,?,?,?)`;
-    var userData = [new Date(),d.JobId,d.CandidateId,JSON.stringify(d.QuestionsAndAnswers),0, d.UserId, 'חדש', d.JobName];
+    var userData = [new Date(),d.JobId,d.CandidateId,JSON.stringify(d.QuestionsAndAnswers),0, d.UserId, 'New', d.JobName];
     con.query(sql,userData, function (err, result) {
         if (err){
             return res.status(500).json(err);
         } else{
             //bot.sendMessage(-206212060, `סוכן ${d.UserId} הגיש למשרה ${d.JobId} את מועמד ${d.CandidateId}`);
-debugger;
-            var secData =   `סוכן ${d.UserId}  הגיש למשרה  ${d.JobId}  (${d.JobName}) את מועמד ${d.CandidateId} `          
-            var secSql = 'INSERT INTO generalmessages (message,isActive, isForcoordinator) VALUES (?,1,1)'
-            con.query(secSql,[secData], function (err, result) {
-              if (err) throw err;
-              console.log('updated coordinator feed' + result)
-              return res.json(result);
-            })
-
-           
+        
+            return res.json(result);
 
         }
     });
@@ -544,65 +483,32 @@ debugger;
     });
 
   });
-  app.post("/job",passport.authenticate('jwt', { session: false }),  (req, res, next) => {
+  app.post("/job",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
           
           decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
-          debugger
-      const countQuery =  'SELECT COUNT(1) AS count FROM Job WHERE IsImportant = 1 and status=1'
-
-      var sql = `INSERT INTO Job
+      
+    var sql = `INSERT INTO Job
       (ID,Title,Commission,Company,Description,CompanyDescription,Date,JobType,Locations,Questions,Categories,UserId,AgentDescription, Period,PaymentPeriod, Areas,SubCategory, Status,IsImportant)
        Values(${d.Id},${mysql.escape(d.Title)},${d.Commission},'HR',${mysql.escape(d.Description)},
        ${mysql.escape(d.CompanyDescription)},'${new Date().toDateString()}','${d.JobType}',${mysql.escape(d.Locations)},${mysql.escape(d.Questions)},'${d.Categories}',${d.UserId}, ${mysql.escape(d.AgentDescription)},'${d.Period}','${d.PaymentPeriod}','${d.Areas}','${d.SubCategory}', ${d.Status},${d.IsImportant})
-       ON DUPLICATE KEY UPDATE Title=VALUES(Title), Commission=VALUES(Comm
-        ission), CompanyDescription=VALUES(CompanyDescription),UserId=VALUES(UserId),
-       Date=VALUES(Date),Description=VALUES(Description), JobType=VALUES(JobType), Locations=VALUES(Locations),Period=VALUES(Period),Questions=VALUES(Questions),Areas=VALUES(Areas),Categories=VALUES(Categories),SubCategory=VALUES(SubCategory),AgentDescription=VALUES(AgentDescription),Status=VALUES(Status),IsImportant=VALUES(IsImportant)`; 
-
-      con.query(countQuery,async function (err, result) {
-        if (err) throw err;
-        debugger;
-        if (d.IsImportant==1 && result[0].count>=8){
-          return res.status(400).send('There are more the 8 Hot jobs defined');
-        }
-        con.query(sql, function (err, result) {
-          if (err){
-              return res.status(500).json(err.code);
-          } else{
-              //result.insertId
-              var updateExternalIdsSql = `UPDATE job set ExternalJobId = ${result.insertId} WHERE Id = ${result.insertId}`
-              con.query(updateExternalIdsSql, function (err, result) {
-                return res.json({});
-              });
-  
-          }
-      });
-        res.json(result);
-    });
-
-
-    // var sql = `INSERT INTO Job
-    //   (ID,Title,Commission,Company,Description,CompanyDescription,Date,JobType,Locations,Questions,Categories,UserId,AgentDescription, Period,PaymentPeriod, Areas,SubCategory, Status,IsImportant)
-    //    Values(${d.Id},${mysql.escape(d.Title)},${d.Commission},'HR',${mysql.escape(d.Description)},
-    //    ${mysql.escape(d.CompanyDescription)},'${new Date().toDateString()}','${d.JobType}',${mysql.escape(d.Locations)},${mysql.escape(d.Questions)},'${d.Categories}',${d.UserId}, ${mysql.escape(d.AgentDescription)},'${d.Period}','${d.PaymentPeriod}','${d.Areas}','${d.SubCategory}', ${d.Status},${d.IsImportant})
-    //    ON DUPLICATE KEY UPDATE Title=VALUES(Title), Commission=VALUES(Comm
-    //     ission), CompanyDescription=VALUES(CompanyDescription),UserId=VALUES(UserId),
-    //    Date=VALUES(Date),Description=VALUES(Description), JobType=VALUES(JobType), Locations=VALUES(Locations),Period=VALUES(Period),Questions=VALUES(Questions),Areas=VALUES(Areas),Categories=VALUES(Categories),SubCategory=VALUES(SubCategory),AgentDescription=VALUES(AgentDescription),Status=VALUES(Status),IsImportant=VALUES(IsImportant)`;
+       ON DUPLICATE KEY UPDATE Title=VALUES(Title), Commission=VALUES(Commission), CompanyDescription=VALUES(CompanyDescription),UserId=VALUES(UserId),
+       Date=VALUES(Date),Description=VALUES(Description), JobType=VALUES(JobType), Locations=VALUES(Locations),Period=VALUES(Period),Questions=VALUES(Questions),Areas=VALUES(Areas),Categories=VALUES(Categories),SubCategory=VALUES(SubCategory),AgentDescription=VALUES(AgentDescription),Status=VALUES(Status),IsImportant=VALUES(IsImportant)`;
    
-    // con.query(sql, function (err, result) {
-    //     if (err){
-    //         return res.status(500).json(err.code);
-    //     } else{
-    //         //result.insertId
-    //         var updateExternalIdsSql = `UPDATE job set ExternalJobId = ${result.insertId} WHERE Id = ${result.insertId}`
-    //         con.query(updateExternalIdsSql, function (err, result) {
-    //           return res.json({});
-    //         });
+    con.query(sql, function (err, result) {
+        if (err){
+            return res.status(500).json(err.code);
+        } else{
+            //result.insertId
+            var updateExternalIdsSql = `UPDATE job set ExternalJobId = ${result.insertId} WHERE Id = ${result.insertId}`
+            con.query(updateExternalIdsSql, function (err, result) {
+              return res.json({});
+            });
 
-    //     }
-    // });
+        }
+    });
   }
   });
 
@@ -703,7 +609,6 @@ debugger;
   });
   app.put("/JobCandidateHistory",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
-    debugger;
     var historySql = `INSERT INTO JobCandidateHistory (JobCandidateId,Status,StatusDescription)
                      Values('${d.jobCandidateId}','Update from agent','${d.StatusDescription}')`;
 
@@ -716,8 +621,6 @@ debugger;
             return res.status(500).json(err.code);
           } 
           con.query(jobCandidateSql, function (err, result) {
-
-            console.log(result)
             return res.json(result);
           });
          
@@ -915,13 +818,12 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
       res.json({});       
     });
   })
-  app.put(" ",passport.authenticate('jwt', { session: false }), (req, res, next) => {
-    console.log('in update candidate')
+  app.put("/candidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
       var user = req.body;
       var sql = `UPDATE Candidate SET FirstName = ` +mysql.escape(user.FirstName)+ `, LastName = `+ mysql.escape(user.LastName)+`, City = `+mysql.escape(user.City)+`
                 , Email= '`+user.Email+`',PhoneNumber = '`+user.PhoneNumber+`', FileExtension='`+user.FileExtension+`',UserRemark = '`+ user.UserRemark+`', HasCV = `+user.HasCV+`
       WHERE ID = `+user.Id+``;
-console.log("sql: " + sql)
+
       con.query(sql, function (err, result) {
           if (err){
             throw err
@@ -931,8 +833,6 @@ console.log("sql: " + sql)
   });
   app.put("/CandidateFileExtension", (req, res, next) => {
       var user = req.body;
-      console.log("file extension: " + user.fileExension)
-      console.log("cand id: : " + user.candidateId)
       var sql = `UPDATE Candidate SET FileExtension='`+user.fileExension+`'
                 WHERE ID = `+user.candidateId+``;
       con.query(sql, function (err, result) {
@@ -942,65 +842,33 @@ console.log("sql: " + sql)
   });
  
 
-  // app.post('/api/upload', upload.single('uploads'), (req, res) => {
-  
-  //     res.json({
-  //         'message': 'File uploaded successfully'
-  //     });
-  // });
-
   app.post('/api/upload', upload.single('uploads'), (req, res) => {
-    // The uploaded file is now available in req.file
-    console.log('SV UPLOADED');
-
-    res.json({
-               'message': 'File uploaded successfully'
-              });
+  
+      res.json({
+          'message': 'File uploaded successfully'
+      });
   });
 
-  app.get('/download', passport.authenticate('jwt', { session: false }), function(req, res) {
-    const fileName = req.query.fileName;
-    const filePath = path.join('D:\\j4u_new\\j4u-server-new', '\\uploads', fileName); // Change 'uploads' to your actual file storage directory
-    console.log('dir: ' + filePath)
-    // Check if the file exists
-    fs.stat(filePath, function(err, stat) {
-      console.log("File existence:" + stat)
-      if (err) {
-        return res.status(404).send({ success: false, err: 'File not found' });
-      }
-  
-      // Set the appropriate response headers
-      res.setHeader('Content-Length', stat.size);
-      res.setHeader('Content-Type', 'application/octet-stream');
-      res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
-  
-      // Stream the file to the response
-      const fileStream = fs.createReadStream(filePath);
-      fileStream.pipe(res);
-    });
-  });
-// download cv _!update
-
-  // app.get('/download',passport.authenticate('jwt', { session: false }), function(req, res){
+  app.get('/download',passport.authenticate('jwt', { session: false }), function(req, res){
       
-  //   const getParams = {
-  //     Bucket: 'j4u-eu',
-  //     Key: req.query.fileName
-  //   };
+    const getParams = {
+      Bucket: 'j4u-eu',
+      Key: req.query.fileName
+    };
     
-  //   s3.getObject(getParams, function(err, data) {
-  //     if (err){
-  //       return res.status(400).send({success:false,err:err});
-  //     }
-  //     else{
-  //       return res.send(data.Body);
-  //     }
-  //   });
+    s3.getObject(getParams, function(err, data) {
+      if (err){
+        return res.status(400).send({success:false,err:err});
+      }
+      else{
+        return res.send(data.Body);
+      }
+    });
     
-  //   // var id = req.query.id;
-  //   //   const file = `${__dirname}/tmp/${id}.doc`;
-  //   //   res.sendFile(file); // Set disposition and send it.
-  // });
+    // var id = req.query.id;
+    //   const file = `${__dirname}/tmp/${id}.doc`;
+    //   res.sendFile(file); // Set disposition and send it.
+  });
     
   app.get("/coordinatorsTable", passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var onlyHr =  req.query.onlyHr;
@@ -1017,12 +885,10 @@ console.log("sql: " + sql)
                   LEFT JOIN jobcandidate jc ON j.ID = jc.JobId 
                   LEFT JOIN users u ON jc.UserId = u.Id
                   LEFT JOIN candidate c ON jc.CandidateId = c.ID
-                  WHERE (j.UserId = ${decoded.id} or ${decoded.userType} = 3)
-                  `;
+                  WHERE (j.UserId = ${decoded.id} or ${decoded.userType} = 3)`;
           if(onlyHr){
             sql += ` and j.Company = 'HR'`
           }
-          sql+=`order by jc.Id desc`
           con.query(sql, function (err, result) {
             if (err) throw err;
             res.json(result);
@@ -1070,6 +936,7 @@ console.log("sql: " + sql)
   });
 
   app.get("/jobCandidateHistoryByUser", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+
     if (req.headers && req.headers.authorization) {
       
       try {
@@ -1094,27 +961,6 @@ console.log("sql: " + sql)
       }
     }
   });
-
-  //
-  app.put("/readNotifications", passport.authenticate('jwt', { session: false }), (req, res, next) => {
-    
-    try {
-      var authorization = req.headers.authorization.split(' ')[1];
-      decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
-        let param =  req.body;
-      var sql = `
-      update notifications set isRead = 1 where notificationid = ${param.NotificationId}`;
-                con.query(sql, function (err, result) {
-                  if (err) throw err;
-                  res.json(result);
-                });
-    }
-    catch (e) {
-      return res.status(401).send('unauthorized');
-    }
-
-  })
-
   app.get("/notifications", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
@@ -1125,8 +971,7 @@ console.log("sql: " + sql)
 
         var sql = `SELECT *
                   FROM notifications n
-                  WHERE n.UserId = ${decoded.id}
-                  order by 1 desc`;
+                  WHERE n.UserId = ${decoded.id}`;
                   con.query(sql, function (err, result) {
                     if (err) throw err;
                     res.json(result);
@@ -1152,9 +997,8 @@ console.log("sql: " + sql)
         INNER JOIN candidate c ON jc.CandidateId = c.Id
         INNER JOIN users u ON c.UserId = u.Id
         LEFT JOIN candidateworkactivity cwa ON cwa.JobCandidateId = jc.Id
-        where jch.Status = 'התקבל' OR  jch.Status = 'סיום עבודה'
+        where jch.Status = 'Accepted' OR jch.Status = 'Finished Working'
         ORDER BY CreatedAt desc        
-
         `;
         con.query(sql, function (err, result) {
           if (err) throw err;
