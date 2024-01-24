@@ -370,3 +370,87 @@
 [2024-01-15T16:04:54.342] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
 [2024-01-15T20:56:31.841] [ERROR] cheese - Caught exception: Error: ER_DUP_ENTRY: Duplicate entry '0544564568-1' for key 'candidate.PhoneNumber_UserId'
 [2024-01-22T23:53:03.830] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2024-01-23T16:07:19.534] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:07:19.669] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:07:27.178] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-23T16:07:48.858] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:07:49.005] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:07:53.959] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-23T16:09:19.388] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:09:26.699] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-23T16:12:07.789] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-23T16:13:39.353] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-23T16:14:46.270] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-23T16:14:54.368] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:14:54.504] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:15:14.880] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:15:15.140] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:15:21.531] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:15:21.778] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:16:36.435] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:16:36.558] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:17:14.597] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:17:14.860] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:17:21.565] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:17:21.840] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:18:36.264] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:18:36.390] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:19:14.549] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:19:14.817] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:19:21.573] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:19:21.700] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:21:14.537] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:21:14.809] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:21:21.578] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:21:21.812] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:23:14.550] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:23:14.844] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:23:21.593] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:23:21.824] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:25:14.583] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:25:14.722] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:25:21.605] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:25:22.187] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:26:12.024] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:26:12.153] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:27:14.586] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:27:14.715] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:27:21.658] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:27:21.782] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:27:29.684] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:27:29.796] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:27:41.928] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:27:42.195] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:28:57.403] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:28:57.653] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:28:59.175] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:28:59.448] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:29:27.236] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:29:27.493] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:29:29.729] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:29:29.917] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:29:33.611] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:29:33.844] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:29:35.396] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:29:35.509] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:29:42.893] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:29:43.162] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:29:43.500] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:29:43.637] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:31:42.538] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:31:42.661] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:31:43.365] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:31:43.496] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:32:22.697] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-23T16:32:22.825] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-23T16:32:29.459] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.jobCandidate' doesn't exist
+[2024-01-23T16:32:29.787] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-01-23T16:33:51.984] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2024-01-23T16:35:22.564] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-23T16:35:22.579] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-23T16:35:37.174] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-23T16:35:37.183] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-23T16:35:37.193] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-23T16:37:37.184] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-23T16:37:37.187] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-23T16:37:37.199] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.

@@ -149,9 +149,9 @@
 
   const sequelize = new Sequelize({
     host: "13.51.67.70",
-    user: "admin",
-    password: "asdASDasd",
     database : 'myjobs',
+    username: "admin",
+    password: "asdASDasd",
     dialect: 'mysql',
   });
 
