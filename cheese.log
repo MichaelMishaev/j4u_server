@@ -454,3 +454,26 @@
 [2024-01-23T16:37:37.184] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
 [2024-01-23T16:37:37.187] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
 [2024-01-23T16:37:37.199] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T20:37:05.738] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-28T20:37:05.885] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-28T20:37:10.128] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-28T20:37:30.149] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-28T20:38:47.387] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-28T20:38:59.008] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-28T20:39:05.688] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-28T20:39:05.816] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-01-28T20:39:10.144] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist
+[2024-01-28T20:39:30.138] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist
+[2024-01-28T20:48:14.381] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2024-01-28T22:47:20.393] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:47:20.398] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:47:20.400] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:49:20.411] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:49:20.413] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:49:20.414] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:50:35.807] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:50:35.827] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:50:35.830] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:50:45.104] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-01-28T22:51:05.114] [ERROR] cheese - Caught exception: Error: Cannot enqueue Query after fatal error.
+[2024-02-04T21:43:25.729] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Categories' doesn't exist

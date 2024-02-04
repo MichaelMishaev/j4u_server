@@ -138,7 +138,7 @@
   // var uploadFromWeb = multer({ storage: storage })
   // var uploadExcel = multer({ storage: storageExcel })
 
-  // initialze an instance of Sequelize
+  //initialze an instance of Sequelize
   // const sequelize = new Sequelize({
   //   host:'localhost',
   //   database: 'myjobs',
@@ -174,7 +174,6 @@
  // const bot = new TelegramBot(jobsUpdateBotToken, {polling: true});
 
   var con;
-debugger;
   function handleDisconnect() {
     con = mysql.createConnection(db_config); // Recreate the connection, since
                                                     // the old one cannot be reused.
@@ -219,7 +218,6 @@ debugger;
   app.use(function (req, res, next) {
     console.log(req.header('host').toLowerCase());
       var origin = sitecors.origin.indexOf(req.header('host').toLowerCase()) > -1 ? req.headers.origin : sitecors.defaul;
-
       // Website you wish to allow to connect
       // res.setHeader('Access-Control-Allow-Origin', 'http://jobs4home.net');
       res.setHeader('Access-Control-Allow-Origin', '*');
@@ -513,7 +511,6 @@ debugger;
  });
   addJobCandidate = (req, res, next) =>{
     var d = req.body;
-    debugger;
     var sql = `INSERT INTO JobCandidate  (CreateDate,JobId,CandidateId,QuestionsAndAnswers,IsSent,UserId,Status,JobName) Values(?,?,?,?,?,?,?,?)`;
     var userData = [new Date(),d.JobId,d.CandidateId,JSON.stringify(d.QuestionsAndAnswers),0, d.UserId, 'חדש', d.JobName];
     con.query(sql,userData, function (err, result) {
@@ -521,7 +518,6 @@ debugger;
             return res.status(500).json(err);
         } else{
             //bot.sendMessage(-206212060, `סוכן ${d.UserId} הגיש למשרה ${d.JobId} את מועמד ${d.CandidateId}`);
-debugger;
             var secData =   `סוכן ${d.UserId}  הגיש למשרה  ${d.JobId}  (${d.JobName}) את מועמד ${d.CandidateId} `          
             var secSql = 'INSERT INTO generalmessages (message,isActive, isForcoordinator) VALUES (?,1,1)'
             con.query(secSql,[secData], function (err, result) {
@@ -550,7 +546,7 @@ debugger;
       var authorization = req.headers.authorization.split(' ')[1],
           
           decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
-          debugger
+          
       const countQuery =  'SELECT COUNT(1) AS count FROM Job WHERE IsImportant = 1 and status=1'
 
       var sql = `INSERT INTO Job
@@ -563,7 +559,7 @@ debugger;
 
       con.query(countQuery,async function (err, result) {
         if (err) throw err;
-        debugger;
+        
         if (d.IsImportant==1 && result[0].count>=8){
           return res.status(400).send('There are more the 8 Hot jobs defined');
         }
@@ -703,7 +699,7 @@ debugger;
   });
   app.put("/JobCandidateHistory",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
-    debugger;
+    
     var historySql = `INSERT INTO JobCandidateHistory (JobCandidateId,Status,StatusDescription)
                      Values('${d.jobCandidateId}','Update from agent','${d.StatusDescription}')`;
 
@@ -1170,7 +1166,7 @@ console.log("sql: " + sql)
   app.get("/lookups", (req, res, next) => {
     //todo improve to forkjoin
     var data = {}
-    var sql = `SELECT * FROM Categories;SELECT * FROM Cities;SELECT * FROM Areas;SELECT * FROM SubCategories;SELECT * FROM JobStatus;SELECT * FROM JobType`;
+    var sql = `SELECT * FROM categories;SELECT * FROM Cities;SELECT * FROM Areas;SELECT * FROM SubCategories;SELECT * FROM JobStatus;SELECT * FROM JobType`;
       con.query(sql, function (err, result) {
         if (err) throw err;
         data.categories = result[0];
