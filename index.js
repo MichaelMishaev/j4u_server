@@ -155,14 +155,6 @@
     dialect: 'mysql',
   });
 
-
-  // var db_config = {
-  //     host: "localhost",
-  //     user: "345287",
-  //     password: "Jtbdtjtb6262",
-  //     database : 'myjobs',
-  //     multipleStatements: true
-  // };
   var db_config = {
     host: "13.51.67.70",
     user: "admin",
@@ -209,31 +201,29 @@
   // use it before all   definitions
   //app.use(cors({origin: 'http://localhost:4200'}));
   const sitecors = {
-    origin: ['https://jobs4home.net','http://3.125.167.138','http://3.127.25.25',
-      'https://www.jobs4home.net','https://j4u.works','https://www.j4u.works','http://localhost:4200'],
-    defaul: 'https://jobs4home.net'
+    origin: '*'
+    // origin: ['https://jobs4home.net','http://3.125.167.138','http://3.127.25.25',
+    //   'https://www.jobs4home.net','https://j4u.works','https://www.j4u.works','http://localhost:4200', '10.100.102.91'],
+    // defaul: 'https://jobs4home.net'
   }
 
 
   app.use(function (req, res, next) {
-    console.log(req.header('host').toLowerCase());
-      var origin = sitecors.origin.indexOf(req.header('host').toLowerCase()) > -1 ? req.headers.origin : sitecors.defaul;
-      // Website you wish to allow to connect
-      // res.setHeader('Access-Control-Allow-Origin', 'http://jobs4home.net');
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      // Request methods you wish to allow
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    // Allow connections from all origins
+    res.setHeader('Access-Control-Allow-Origin', '*');
 
-      // Request headers you wish to allow
-      res.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With,content-type,Authorization');
+    // Allow specific HTTP methods
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-      // Set to true if you need the website to include cookies in the requests sent
-      // to the API (e.g. in case you use sessions)
-      res.setHeader('Access-Control-Allow-Credentials', true);
+    // Allow specific headers in requests
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
-      // Pass to next layer of middleware
-      next();
-  });
+    // If you need the website to include cookies in the requests sent to the API (e.g., for sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to the next layer of middleware
+    next();
+});
 
   // check the databse connection
   sequelize
@@ -345,15 +335,19 @@
   });
 
   // get all users
-  app.get('/users',passport.authenticate('jwt', { session: false }), function(req, res) {
+  app.get('/api/users',passport.authenticate('jwt', { session: false }), function(req, res) {
     getAllUsers().then(user => res.json(user));
   });
 
-  app.get('/test', function(req, res) {
+  app.get('/api/', function(req, res) {
+    console.log("GREAT SUCCCESS")
+  })
+
+  app.get('/api/test', function(req, res) {
     res.json("ok");
   });
 
-  app.get("/generalMessages",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/generalMessages",passport.authenticate('jwt', { session: false }), (req, res, next) => {
       
     var sql = `SELECT Message FROM generalmessages WHERE isactive = 1 and IsForCoordinator = 0`;
     con.query(sql, function (err, result) {
@@ -363,7 +357,7 @@
 
   });
 
-  app.get("/generalMessagesForCoordinators",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/generalMessagesForCoordinators",passport.authenticate('jwt', { session: false }), (req, res, next) => {
       
     var sql =`select * 
                     from(
@@ -385,7 +379,7 @@
 
   });
 
-  app.get("/jobs", passport.authenticate('jwt', { session: false }),(req, res, next) => {
+  app.get("/api/jobs", passport.authenticate('jwt', { session: false }),(req, res, next) => {
       
       var sql = `SELECT * FROM job WHERE Status = 1 ORDER BY IsImportant desc, Company = 'HR' DESC,date_created DESC`;
       con.query(sql, function (err, result) {
@@ -399,7 +393,7 @@
           res.json(result);
       });
   });
-  app.get("/jobsBase",(req, res, next) => {
+  app.get("/api/jobsBase",(req, res, next) => {
       
     var sql = `SELECT ID, Title,Date,Questions,Description,AgentDescription,Categories,Commission FROM job WHERE Status = 1 ORDER BY IsImportant desc, Company = 'HR' DESC,date_created DESC`;
     con.query(sql, function (err, result) {
@@ -413,7 +407,7 @@
         res.json(result);
     });
 });
-  app.get("/closedJobs", passport.authenticate('jwt', { session: false }),(req, res, next) => {
+  app.get("/api/closedJobs", passport.authenticate('jwt', { session: false }),(req, res, next) => {
       
     var sql = `SELECT * FROM job where Status = 0 and Company != 'SVT' ORDER BY IsImportant, Company = 'HR' desc`;
     con.query(sql, function (err, result) {
@@ -428,7 +422,7 @@
     });
 });
 
-  app.get("/jobCandidateByUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/jobCandidateByUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     //removed the 0.6
       var sql = `SELECT JobId,jc.Id as JobCandidateId,jc.Status,j.Title,Concat(c.FirstName,' ', c.LastName) as CandidateName, CAST(IsInternalReject AS UNSIGNED) AS IsInternalReject,StatusDescription, (j.Commission ) as Commission, j.Questions,jc.QuestionsAndAnswers, jc.updated_at
       FROM jobcandidate jc 
@@ -440,7 +434,7 @@
           res.json(result);
       });
   });
-  app.get("/bonusesByUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/bonusesByUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var sql = `SELECT *
     FROM UserBonuses WHERE userid=` + req.query.u;
     con.query(sql, function (err, result) {
@@ -448,7 +442,7 @@
         res.json(result);
     });
 });
-  app.get("/subordinateCandidateByUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/subordinateCandidateByUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
@@ -483,7 +477,7 @@
           res.json(result);
       });
   });
-  app.get("/userRanking", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/userRanking", passport.authenticate('jwt', { session: false }), (req, res, next) => {
     //removed the 0.6 commission
     var sql = `SELECT COUNT(jc.UserId) AS candidatesForUser,jc.UserId, Sum(j.Commission ) AS Commission
      FROM jobcandidate jc inner JOIN job j on jc.JobId = j.Id
@@ -495,18 +489,18 @@
         res.json(result);
     });
   });
-  app.get("/userProfits", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/userProfits", passport.authenticate('jwt', { session: false }), (req, res, next) => {
       var sql = `SELECT * FROM UserProfits WHERE UserId=` + req.query.id;
       con.query(sql, function (err, result) {
           if (err) throw err;
           res.json(result);
       });
   });
-  app.post("/jobCandidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.post("/api/jobCandidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
      return addJobCandidate(req,res,next)
   });
 
-  app.post("/ExternalJobCandidate", (req, res, next) => {
+  app.post("/api/ExternalJobCandidate", (req, res, next) => {
     return addJobCandidate(req,res,next)
  });
   addJobCandidate = (req, res, next) =>{
@@ -531,7 +525,7 @@
         }
     });
   }
-  app.post("/generalMessages",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.post("/api/generalMessages",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var message = req.body.message;
     var sql = `INSERT INTO generalmessages (Message,IsActive) values(${mysql.escape(message)},1)`;
     con.query(sql, function (err, result) {
@@ -540,7 +534,7 @@
     });
 
   });
-  app.post("/job",passport.authenticate('jwt', { session: false }),  (req, res, next) => {
+  app.post("/api/job",passport.authenticate('jwt', { session: false }),  (req, res, next) => {
     var d = req.body;
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
@@ -602,7 +596,7 @@
   }
   });
 
-  app.post("/deleteJobCandidate",passport.authenticate('jwt',{session:false}),(req, res) =>{
+  app.post("/api/deleteJobCandidate",passport.authenticate('jwt',{session:false}),(req, res) =>{
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
           decoded;
@@ -623,7 +617,7 @@
   }
 
   })
-  app.put("/jobCandidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/jobCandidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     var sql = `UPDATE JobCandidate SET QuestionsAndAnswers = '${d.QuestionsAndAnswers}' , IsUpdatedByUser=1, IsInternalReject = 2 where Id=${d.Id}`;
     con.query(sql, function (err, result) {
@@ -635,7 +629,7 @@
         }
     });
   });
-  app.put("/CandidateIsFromPool",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/CandidateIsFromPool",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     var sql = `UPDATE Candidate SET IsFromPool = '${d.isFromPool}' where Id=${d.candidateId}`;
     con.query(sql, function (err, result) {
@@ -648,7 +642,7 @@
     });
   });
   //todo fix statuses
-  app.put("/jobCandidateStatus",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/jobCandidateStatus",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     var status =  d.Status.description || d.Status;
     var isInternalReject = status == 'lack of details' || d.Status.id == 3 ? 1 : 0;
@@ -697,7 +691,7 @@
         }
     });
   });
-  app.put("/JobCandidateHistory",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/JobCandidateHistory",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     
     var historySql = `INSERT INTO JobCandidateHistory (JobCandidateId,Status,StatusDescription)
@@ -721,7 +715,7 @@
   });
 
   
-  app.put("/jobCandidateIsRead",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/jobCandidateIsRead",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     var sql = `UPDATE JobCandidate SET IsRead = 1,isCoordinatorRead = 1
                where Id=${d.jobCandidateId}`;
@@ -734,7 +728,7 @@
         }
     });
   });
-  app.put("/jobCandidateIsCoordinatorRead",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/jobCandidateIsCoordinatorRead",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     var sql = `UPDATE JobCandidate SET IsCoordinatorRead = 1
                where Id=${d.jobCandidateId}`;
@@ -747,7 +741,7 @@
         }
     });
   });
-  app.put("/jobUserId",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/jobUserId",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
     var sql = `UPDATE Job SET UserId = ${d.userId}
                where Id=${d.jobId}`;
@@ -760,7 +754,7 @@
         }
     });
   });
-  app.get("/candidates",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/candidates",passport.authenticate('jwt', { session: false }), (req, res, next) => {
       var sql = `SELECT * FROM  Candidate WHERE UserId = ` + req.query.u + ` ORDER BY Id DESC`;
       con.query(sql,async function (err, result) {
           if (err) throw err;
@@ -774,14 +768,14 @@
           res.json(result);
       });
   });
-  app.get("/usersBase",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/usersBase",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var sql = `SELECT Id,FullName,Email FROM  Users WHERE IsActive = 1 and UserType = 1`;
     con.query(sql,async function (err, result) {
         if (err) throw err;
         res.json(result);
     });
 });
-  app.get("/poolCandidates",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/poolCandidates",passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
@@ -814,7 +808,7 @@
 
 });
 
-app.get("/isPremittedToPool",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+app.get("/api/isPremittedToPool",passport.authenticate('jwt', { session: false }), (req, res, next) => {
   if (req.headers && req.headers.authorization) {
     var authorization = req.headers.authorization.split(' ')[1],
         decoded;
@@ -839,10 +833,10 @@ app.get("/isPremittedToPool",passport.authenticate('jwt', { session: false }), (
     }
   }
 });
-app.post("/ExternalCandidate", (req, res, next) => {
+app.post("/api/ExternalCandidate", (req, res, next) => {
   return addCandidate(req, res, next,true);
 });
-app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+app.post("/api/candidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
   return addCandidate(req, res, next);
 });
 
@@ -873,7 +867,7 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
     }
   }
 
-  app.post("/poolCandidateToUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.post("/api/poolCandidateToUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
       try{
         if (req.headers && req.headers.authorization) {
           var authorization = req.headers.authorization.split(' ')[1],
@@ -903,7 +897,7 @@ app.post("/candidate",passport.authenticate('jwt', { session: false }), (req, re
     }
     
   });
-  app.post("/notifications",passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.post("/api/notifications",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body
     var sql = `INSERT INTO notifications  (UserId,Message,IsRead) Values (${d.userId},'${d.message}', 0)`;
     con.query(sql, function (err, result) {
@@ -925,7 +919,7 @@ console.log("sql: " + sql)
           res.json(result);
       });
   });
-  app.put("/CandidateFileExtension", (req, res, next) => {
+  app.put("/api/CandidateFileExtension", (req, res, next) => {
       var user = req.body;
       console.log("file extension: " + user.fileExension)
       console.log("cand id: : " + user.candidateId)
@@ -954,7 +948,7 @@ console.log("sql: " + sql)
               });
   });
 
-  app.get('/download', passport.authenticate('jwt', { session: false }), function(req, res) {
+  app.get('/api/download', passport.authenticate('jwt', { session: false }), function(req, res) {
     const fileName = req.query.fileName;
     const filePath = path.join('D:\\j4u_new\\j4u-server-new', '\\uploads', fileName); // Change 'uploads' to your actual file storage directory
     console.log('dir: ' + filePath)
@@ -977,7 +971,7 @@ console.log("sql: " + sql)
   });
 // download cv _!update
 
-  // app.get('/download',passport.authenticate('jwt', { session: false }), function(req, res){
+  // app.get('/api/download',passport.authenticate('jwt', { session: false }), function(req, res){
       
   //   const getParams = {
   //     Bucket: 'j4u-eu',
@@ -998,7 +992,7 @@ console.log("sql: " + sql)
   //   //   res.sendFile(file); // Set disposition and send it.
   // });
     
-  app.get("/coordinatorsTable", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/coordinatorsTable", passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var onlyHr =  req.query.onlyHr;
 
     if (req.headers && req.headers.authorization) {
@@ -1030,7 +1024,7 @@ console.log("sql: " + sql)
     }
   });
 
-  app.get("/coordinatorsSummary", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/coordinatorsSummary", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
@@ -1052,7 +1046,7 @@ console.log("sql: " + sql)
     }
   });
     
-  app.get("/jobCandidateHistory", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/jobCandidateHistory", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     var jobCandidateId = req.query.jobCandidateId;
 
@@ -1065,7 +1059,7 @@ console.log("sql: " + sql)
       });
   });
 
-  app.get("/jobCandidateHistoryByUser", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/jobCandidateHistoryByUser", passport.authenticate('jwt', { session: false }), (req, res, next) => {
     if (req.headers && req.headers.authorization) {
       
       try {
@@ -1092,7 +1086,7 @@ console.log("sql: " + sql)
   });
 
   //
-  app.put("/readNotifications", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.put("/api/readNotifications", passport.authenticate('jwt', { session: false }), (req, res, next) => {
     
     try {
       var authorization = req.headers.authorization.split(' ')[1];
@@ -1111,7 +1105,7 @@ console.log("sql: " + sql)
 
   })
 
-  app.get("/notifications", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/notifications", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
       
@@ -1133,7 +1127,7 @@ console.log("sql: " + sql)
       }
     }
   });
-  app.get("/jobCandidateCompletedHistory", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/jobCandidateCompletedHistory", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
       
@@ -1163,7 +1157,7 @@ console.log("sql: " + sql)
     }
   });
 
-  app.get("/lookups", (req, res, next) => {
+  app.get("/api/lookups", (req, res, next) => {
     //todo improve to forkjoin
     var data = {}
     var sql = `SELECT * FROM categories;SELECT * FROM Cities;SELECT * FROM Areas;SELECT * FROM SubCategories;SELECT * FROM JobStatus;SELECT * FROM JobType`;
@@ -1179,7 +1173,7 @@ console.log("sql: " + sql)
 
       });
   });
-  app.get("/report", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/report", passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var sql = `SELECT j.id AS JobId,
     j.companyDescription AS Company_name,
     j.title AS Title,
@@ -1221,7 +1215,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
       });
   });
 
-  app.get("/knownCandidateHistory",passport.authenticate('jwt', { session: false }), (req, res, next) =>{
+  app.get("/api/knownCandidateHistory",passport.authenticate('jwt', { session: false }), (req, res, next) =>{
     
     var sql = `SELECT jch.Status,jch.StatusDescription,jch.InternalRemarks,
                       u.fullname AS AgentFullName,jc.CreateDate CreateDate,
@@ -1241,7 +1235,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
 
   });
 
-  app.get("/userManagers", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/userManagers", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     var sql = `SELECT u.fullName,u.id, um.ManagerId FROM UserManagers um INNER JOIN Users u on um.UserId = u.Id where um.UserType > 1`;
       con.query(sql, function (err, result) {
@@ -1249,7 +1243,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
         res.json(result);       
       });
   });
-  app.get("/userMessages", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.get("/api/userMessages", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
@@ -1268,7 +1262,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
     }
   });
 
-  app.post("/userMessage", passport.authenticate('jwt', { session: false }), (req, res, next) => {
+  app.post("/api/userMessage", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
     if (req.headers && req.headers.authorization) {
       var authorization = req.headers.authorization.split(' ')[1],
@@ -1292,11 +1286,15 @@ AND j.company='hr' and jc.IsDeleted = 0`;
     ///Auth
 
     
-  app.post("/auth/sign-in", async function(req, res, next) {
+  app.post("/api/auth/sign-in", async function(req, res, next) {
       const { email, password } = req.body;
-      console.log("1111")
       if (email && password) {
-        let user = await getUser({ email: email });
+        let user;
+        try {
+          user = await getUser({ email: email });
+        } catch(e) {
+          console.log(e)
+        }
         if (!user) {
           res.status(401).json({ message: 'No such user found' });
         }
@@ -1313,16 +1311,15 @@ AND j.company='hr' and jc.IsDeleted = 0`;
             { where: { id: user.id } }).then(()=>{
               res.json({ msg: 'ok', token: token });
             });
-        
         } else {
           res.status(401).json({ msg: 'Password is incorrect' });
         }
       }
   });
-  app.post("/auth/sign-out", async function(req, res, next) {
+  app.post("/api/auth/sign-out", async function(req, res, next) {
     res.json({ msg: 'ok'});
   });
-  app.post("/auth/sign-in-google", async function(req, res, next) {
+  app.post("/api/auth/sign-in-google", async function(req, res, next) {
 
     const token = req.body.token;
     const email = req.body.email;
@@ -1347,10 +1344,16 @@ AND j.company='hr' and jc.IsDeleted = 0`;
     });  
 });
 
-  app.post("/auth/sign-up", async (req, res, next) => {
+  app.post("/api/auth/sign-up", async (req, res, next) => {
       const { fullName, password, email, phoneNumber } = req.body;
       const isActive = true;
-      let user = await getUser({ email: email });
+      let user
+      try {
+        user = await getUser({ email: email });
+      } catch (e) {
+        console.log(e)
+      }
+      
       if(user){
         res.status(401).json({ msg: 'Duplicate email' });
         return;
@@ -1370,12 +1373,11 @@ AND j.company='hr' and jc.IsDeleted = 0`;
       //     }
       //   });
 
-
       res.json({ user, msg: 'account created successfully' });
     });
   });
 
-  app.post("/auth/request-pass", (req, res, next) => {
+  app.post("/api/auth/request-pass", (req, res, next) => {
       mailOptions.text = req.body.email + "  requested password reset";
       transporter.sendMail(mailOptions, function(error, info){
           if (error) {
@@ -1388,7 +1390,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
       res.json({});
   });
 
-  app.post("/contactForm",(req, res, next) => {
+  app.post("/api/contactForm",(req, res, next) => {
     var body = req.body;
     var sql = `INSERT INTO ContactUs  (CustomerName,Email,Message, PhoneNumber) Values(?,?,?,?)`;
       var userData = [body.CustomerName, body.Email, body.Message, body.PhoneNumber ];
@@ -1398,7 +1400,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
       });
   })
   //TODO ADD PROTECTION FOR USER TYPE > 1 ONLY
-  app.post("/searchJobCandidates",passport.authenticate('jwt', { session: false }),(req, res, next) => {
+  app.post("/api/searchJobCandidates",passport.authenticate('jwt', { session: false }),(req, res, next) => {
     var body = req.body;
     var sql = `SELECT c.Id CandidateId, Concat(c.FirstName,' ', c.LastName) AS candidateName,
                 c.email AS candidateMail, c.PhoneNumber AS candidatePhoneNumber,
@@ -1431,3 +1433,9 @@ AND j.company='hr' and jc.IsDeleted = 0`;
   process.on('uncaughtException', function(err) {
       logger.error('Caught exception: ' + err);
     });
+
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
+    
