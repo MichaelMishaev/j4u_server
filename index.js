@@ -199,7 +199,7 @@
   app.use(passport.initialize());
 
   // use it before all   definitions
-  app.use(cors({origin: 'http://localhost:4200'}));
+
   const sitecors = {
     origin: '*'
     // origin: ['https://jobs4home.net','http://3.125.167.138','http://3.127.25.25',
@@ -208,22 +208,14 @@
   }
 
 
-  app.use(function (req, res, next) {
-    // Allow connections from all origins
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    // Allow specific HTTP methods
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Allow specific headers in requests
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-
-    // If you need the website to include cookies in the requests sent to the API (e.g., for sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to the next layer of middleware
-    next();
-});
+  const corsOptions = {
+    origin: 'http://localhost:4200', // This ensures only requests from this origin are allowed.
+    credentials: true, // This is needed for sessions or when your API expects cookies to be sent.
+    methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE', // Specify the allowed methods
+    allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization' // Specify the allowed headers
+  };
+  
+  app.use(cors(corsOptions));
 
   // check the databse connection
   sequelize
