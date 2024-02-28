@@ -6,7 +6,7 @@
   const TelegramBot = require('node-telegram-bot-api');
   //  var privateKey  = fs.readFileSync('/usr/share/pki/ca-trust-source/j4r_co_il_private.key', 'utf8');
   //  var certificate = fs.readFileSync('/usr/share/pki/ca-trust-source/j4r.co.il.crt', 'utf8');
-
+  const cors = require('cors');
   
   const path = require('path');//for local usage _ !update
 
@@ -78,7 +78,7 @@
 
 
   httpServer.listen(3001,function(){
-    console.log("server is listen 3001")
+    console.log("server is listen 3001 Michael")git 
   });
 
 
@@ -199,7 +199,7 @@
   app.use(passport.initialize());
 
   // use it before all   definitions
-  //app.use(cors({origin: 'http://localhost:4200'}));
+  app.use(cors({origin: 'http://localhost:4200'}));
   const sitecors = {
     origin: '*'
     // origin: ['https://jobs4home.net','http://3.125.167.138','http://3.127.25.25',
