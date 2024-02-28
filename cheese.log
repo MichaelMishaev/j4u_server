@@ -6845,3 +6845,5 @@
 [2024-02-04T19:00:57.670] [ERROR] cheese - Caught exception: Error: write EIO
 [2024-02-04T19:55:46.062] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3000
 [2024-02-04T19:55:46.063] [ERROR] cheese - Caught exception: Error: listen EADDRINUSE: address already in use :::3001
+[2024-02-28T20:42:30.797] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobCandidate' doesn't exist
+[2024-02-28T20:42:30.914] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserManagers' doesn't exist

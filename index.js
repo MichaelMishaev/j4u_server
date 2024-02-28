@@ -326,6 +326,18 @@
     });
   });
 
+  //#################################################
+  //#################################################
+  //###############TEST ENDPOINT#####################
+  //#################################################
+  //#################################################
+  app.post('/test', (req, res) => {
+    // Echo back the received request body
+    res.json({ receivedBody: req.body  + 'test'});
+  });
+
+
+
   // get all users
   app.get('/api/users',passport.authenticate('jwt', { session: false }), function(req, res) {
     getAllUsers().then(user => res.json(user));
