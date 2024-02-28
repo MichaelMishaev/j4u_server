@@ -337,9 +337,8 @@
   //###############TEST ENDPOINT#####################
   //#################################################
   //#################################################
-  app.post('/api/test', (req, res) => {
-    // Echo back the received request body
-    res.json({ receivedBody: req.body  + 'test'});
+  app.get('/health', (req, res) => {
+    res.status(200).send("I'm alive");
   });
 
 
