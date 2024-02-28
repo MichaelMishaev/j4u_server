@@ -74,6 +74,11 @@
   httpsServer.listen(3000,function(){
     console.log("server is listen 3000")
   });
+
+  httpsServer.on('error', (error) => {
+    console.error('Failed to start server:', error);
+  });
+  
   console.log("skip server listen")
 
 
