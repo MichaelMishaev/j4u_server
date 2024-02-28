@@ -337,7 +337,7 @@
   //###############TEST ENDPOINT#####################
   //#################################################
   //#################################################
-  app.post('/test', (req, res) => {
+  app.post('/api/test', (req, res) => {
     // Echo back the received request body
     res.json({ receivedBody: req.body  + 'test'});
   });
