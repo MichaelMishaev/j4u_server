@@ -799,7 +799,7 @@
                   INNER JOIN SubCategories ca on pcsc.SubCategoryId = ca.Id
                   INNER JOIN poolcandidatescities pcc on c.Id = pcc.CandidateId
                   INNER JOIN cities cit on pcc.CityId = cit.Id
-                  INNER JOIN Areas a on cit.AreaId = a.Id
+                  INNER JOIN areas a on cit.AreaId = a.Id
                   WHERE c.IsFromPool = 1 
                   AND NOT EXISTS( SELECT 1 FROM candidate c2 WHERE userid = ${userId} AND c2.PhoneNumber = c.PhoneNumber)`;
           con.query(sql,async function (err, result) {
@@ -1169,7 +1169,7 @@ console.log("sql: " + sql)
   app.get("/api/lookups", (req, res, next) => {
     //todo improve to forkjoin
     var data = {}
-    var sql = `SELECT * FROM categories;SELECT * FROM cities;SELECT * FROM Areas;SELECT * FROM SubCategories;SELECT * FROM JobStatus;SELECT * FROM JobType`;
+    var sql = `SELECT * FROM categories;SELECT * FROM cities;SELECT * FROM areas;SELECT * FROM subcCategories;SELECT * FROM jobstatus;SELECT * FROM JobType`;
       con.query(sql, function (err, result) {
         if (err) throw err;
         data.categories = result[0];
@@ -1213,7 +1213,7 @@ INNER JOIN candidate c
    ON c.id = jc.CandidateId
 INNER JOIN users u
    ON u.id = jc.UserId         
-INNER JOIN Users um        
+INNER JOIN users um        
    ON um.id = j.UserId 
 WHERE js.id IN(1,3,4,5,12,13,14)        
 AND j.company='hr' and jc.IsDeleted = 0`;
@@ -1234,7 +1234,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
                       INNER JOIN jobcandidatehistory jch
                       ON jch.JobCandidateId = jc.Id
                       INNER JOIN job j ON j.id = jc.JobId
-                      INNER JOIN USERs u ON u.id = jc.UserId
+                      INNER JOIN users u ON u.id = jc.UserId
                       INNER JOIN candidate c ON c.id = jc.CandidateId
                       where c.Id = ${req.query.CandidateId}`
         con.query(sql, function (err, result) {
@@ -1259,7 +1259,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
           decoded;
       try {
         decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
-        var sql = `SELECT * FROM userMessages`;
+        var sql = `SELECT * FROM usermessages`;
         con.query(sql, function (err, result) {
           if (err) throw err;
           res.json(result);       
@@ -1279,7 +1279,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
       try {
         var d = req.body;
         decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
-        var sql = `INSERT INTO UserMessages  (FromUser,ToUser,Message) Values (${decoded.id},${d.ToUser},'${d.Message}')`;
+        var sql = `INSERT INTO usermessages  (FromUser,ToUser,Message) Values (${decoded.id},${d.ToUser},'${d.Message}')`;
         con.query(sql, function (err, result) {
           if (err) throw err;
           res.json({});       
@@ -1401,7 +1401,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
 
   app.post("/api/contactForm",(req, res, next) => {
     var body = req.body;
-    var sql = `INSERT INTO ContactUs  (CustomerName,Email,Message, PhoneNumber) Values(?,?,?,?)`;
+    var sql = `INSERT INTO contactus  (CustomerName,Email,Message, PhoneNumber) Values(?,?,?,?)`;
       var userData = [body.CustomerName, body.Email, body.Message, body.PhoneNumber ];
       con.query(sql,userData, function (err, result) {
         if (err) throw err;
