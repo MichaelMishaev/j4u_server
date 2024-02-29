@@ -376,7 +376,7 @@
                     AND gm.isforcoordinator=1 
                     UNION ALL
                     SELECT  CONCAT('מועמד מספר ', jc.candidateId ,' עודכן סטטוס' ,' המוגש למשרה ', jc.jobId) as Message, jc.updated_at, jc.isRead
-                    FROM JobCandidate as jc
+                    FROM jobcandidate as jc
                     where IsInternalReject = 2 ) as tbl
                     order by Date desc
     `
@@ -514,7 +514,7 @@
  });
   addJobCandidate = (req, res, next) =>{
     var d = req.body;
-    var sql = `INSERT INTO JobCandidate  (CreateDate,JobId,CandidateId,QuestionsAndAnswers,IsSent,UserId,Status,JobName) Values(?,?,?,?,?,?,?,?)`;
+    var sql = `INSERT INTO jobcandidate  (CreateDate,JobId,CandidateId,QuestionsAndAnswers,IsSent,UserId,Status,JobName) Values(?,?,?,?,?,?,?,?)`;
     var userData = [new Date(),d.JobId,d.CandidateId,JSON.stringify(d.QuestionsAndAnswers),0, d.UserId, 'חדש', d.JobName];
     con.query(sql,userData, function (err, result) {
         if (err){
@@ -614,7 +614,7 @@
       } catch (e) {
           return res.status(401).send('unauthorized');
       }
-      var sql = `UPDATE JobCandidate SET IsDeleted = 1 WHERE Id = ${req.body.id} and UserId = ${decoded.id}`
+      var sql = `UPDATE jobcandidate SET IsDeleted = 1 WHERE Id = ${req.body.id} and UserId = ${decoded.id}`
       con.query(sql, function (err, result) {
         if (err){
             return res.status(500).json(err.code);
@@ -628,7 +628,7 @@
   })
   app.put("/api/jobCandidate",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
-    var sql = `UPDATE JobCandidate SET QuestionsAndAnswers = '${d.QuestionsAndAnswers}' , IsUpdatedByUser=1, IsInternalReject = 2 where Id=${d.Id}`;
+    var sql = `UPDATE jobcandidate SET QuestionsAndAnswers = '${d.QuestionsAndAnswers}' , IsUpdatedByUser=1, IsInternalReject = 2 where Id=${d.Id}`;
     con.query(sql, function (err, result) {
         if (err){
             return res.status(500).json(err.code);
@@ -659,7 +659,7 @@
     var isAddBonus = status == 'Resume sent'
     var historySql = `INSERT INTO JobCandidateHistory (JobCandidateId,Status,StatusDescription,InternalRemarks)
                      Values('${d.jobCandidateId}','${status}','${d.StatusDescription || ''}','${d.InternalRemarks || ''}')`;
-    var sql = `UPDATE JobCandidate SET Status = '${status}' , IsInternalReject = ${isInternalReject},
+    var sql = `UPDATE jobcandidate SET Status = '${status}' , IsInternalReject = ${isInternalReject},
                StatusDescription='${d.StatusDescription}', InternalRemarks='${d.InternalRemarks}'
                where Id=${d.jobCandidateId}`;
 
@@ -707,7 +707,7 @@
                      Values('${d.jobCandidateId}','Update from agent','${d.StatusDescription}')`;
 
     //always updates to InternalReject = 2 to send it to the coordinator
-    var jobCandidateSql = `UPDATE JobCandidate Set IsInternalReject = 2,IsCoordinatorRead = 0 where Id = '${d.jobCandidateId}'`;             
+    var jobCandidateSql = `UPDATE jobcandidate Set IsInternalReject = 2,IsCoordinatorRead = 0 where Id = '${d.jobCandidateId}'`;             
 
 
      con.query(historySql, function (err, result) {
@@ -726,7 +726,7 @@
   
   app.put("/api/jobCandidateIsRead",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
-    var sql = `UPDATE JobCandidate SET IsRead = 1,isCoordinatorRead = 1
+    var sql = `UPDATE jobcandidate SET IsRead = 1,isCoordinatorRead = 1
                where Id=${d.jobCandidateId}`;
     con.query(sql, function (err, result) {
         if (err){
@@ -739,7 +739,7 @@
   });
   app.put("/api/jobCandidateIsCoordinatorRead",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
-    var sql = `UPDATE JobCandidate SET IsCoordinatorRead = 1
+    var sql = `UPDATE jobcandidate SET IsCoordinatorRead = 1
                where Id=${d.jobCandidateId}`;
     con.query(sql, function (err, result) {
         if (err){
