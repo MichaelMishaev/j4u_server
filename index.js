@@ -1246,7 +1246,7 @@ AND j.company='hr' and jc.IsDeleted = 0`;
 
   app.get("/api/userManagers", passport.authenticate('jwt', { session: false }), (req, res, next) => {
 
-    var sql = `SELECT u.fullName,u.id, um.ManagerId FROM usermanagers um INNER JOIN Users u on um.UserId = u.Id where um.UserType > 1`;
+    var sql = `SELECT u.fullName,u.id, um.ManagerId FROM usermanagers um INNER JOIN users u on um.UserId = u.Id where um.UserType > 1`;
       con.query(sql, function (err, result) {
         if (err) throw err;
         res.json(result);       
