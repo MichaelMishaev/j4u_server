@@ -798,7 +798,7 @@
                   INNER JOIN PoolCandidateSubCategories pcsc on c.Id = pcsc.CandidateId
                   INNER JOIN SubCategories ca on pcsc.SubCategoryId = ca.Id
                   INNER JOIN poolcandidatescities pcc on c.Id = pcc.CandidateId
-                  INNER JOIN Cities cit on pcc.CityId = cit.Id
+                  INNER JOIN cities cit on pcc.CityId = cit.Id
                   INNER JOIN Areas a on cit.AreaId = a.Id
                   WHERE c.IsFromPool = 1 
                   AND NOT EXISTS( SELECT 1 FROM candidate c2 WHERE userid = ${userId} AND c2.PhoneNumber = c.PhoneNumber)`;
@@ -1011,7 +1011,7 @@ console.log("sql: " + sql)
         decoded = jwt.verify(authorization, jwtOptions.secretOrKey);
         var sql = `SELECT jc.Id as jobCandidateId,j.Id as JobId,j.Questions,jc.QuestionsAndAnswers,jc.IsRead,jc.IsCoordinatorRead, j.Title,j.ExternalJobId,c.HasCV,c.Id as CandidateId,jc.IsInternalReject,j.Description,
                   j.UserId as JobUserId,j.CompanyDescription,u.Id as UserId,u.fullName, u.email, u.phoneNumber,jc.Status,jc.StatusDescription,jc.InternalRemarks, c.FirstName,c.LastName,c.Email as CandidateEmail,c.PhoneNumber CandidatePhoneNumber,
-                  jc.updated_at,c.OriginalCandidateId,c.FileExtension, IF(EXISTS (SELECT 1 FROM jobCandidate jc2 INNER JOIN candidate c2 ON jc2.CandidateId = c2.Id  WHERE c2.PhoneNumber = c.PhoneNumber AND jc2.Id != jc.Id),1,0) IsKnown
+                  jc.updated_at,c.OriginalCandidateId,c.FileExtension, IF(EXISTS (SELECT 1 FROM jobcandidate jc2 INNER JOIN candidate c2 ON jc2.CandidateId = c2.Id  WHERE c2.PhoneNumber = c.PhoneNumber AND jc2.Id != jc.Id),1,0) IsKnown
                   FROM job j
                   LEFT JOIN jobcandidate jc ON j.ID = jc.JobId 
                   LEFT JOIN users u ON jc.UserId = u.Id
@@ -1077,7 +1077,7 @@ console.log("sql: " + sql)
 
         var sql = `SELECT j.Status,j.CreatedAt,j.StatusDescription,j.InternalRemarks, jc.JobName, Concat(c.FirstName,' ', c.LastName) AS CandidateName
                   FROM jobcandidatehistory j
-                  inner join jobCandidate jc
+                  inner join jobcandidate jc
                   on j.jobCandidateId = jc.Id
                   inner join Candidate c
                   on jc.CandidateId = c.Id
@@ -1169,7 +1169,7 @@ console.log("sql: " + sql)
   app.get("/api/lookups", (req, res, next) => {
     //todo improve to forkjoin
     var data = {}
-    var sql = `SELECT * FROM categories;SELECT * FROM Cities;SELECT * FROM Areas;SELECT * FROM SubCategories;SELECT * FROM JobStatus;SELECT * FROM JobType`;
+    var sql = `SELECT * FROM categories;SELECT * FROM cities;SELECT * FROM Areas;SELECT * FROM SubCategories;SELECT * FROM JobStatus;SELECT * FROM JobType`;
       con.query(sql, function (err, result) {
         if (err) throw err;
         data.categories = result[0];
