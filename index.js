@@ -1169,7 +1169,7 @@ console.log("sql: " + sql)
   app.get("/api/lookups", (req, res, next) => {
     //todo improve to forkjoin
     var data = {}
-    var sql = `SELECT * FROM categories;SELECT * FROM cities;SELECT * FROM areas;SELECT * FROM subccategories;SELECT * FROM jobstatus;SELECT * FROM JobType`;
+    var sql = `SELECT * FROM categories;SELECT * FROM cities;SELECT * FROM areas;SELECT * FROM subcategories;SELECT * FROM jobstatus;SELECT * FROM JobType`;
       con.query(sql, function (err, result) {
         if (err) throw err;
         data.categories = result[0];
