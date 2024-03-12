@@ -215,7 +215,7 @@
 
 
   const corsOptions = {
-    origin: 'http://localhost:4200', // This ensures only requests from this origin are allowed.
+    origin:  sitecors, // This ensures only requests from this origin are allowed.
     credentials: true, // This is needed for sessions or when your API expects cookies to be sent.
     methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE', // Specify the allowed methods
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization' // Specify the allowed headers
