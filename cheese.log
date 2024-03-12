@@ -1,2 +1,12 @@
  
- 
+ [2024-03-11T00:29:47.565] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobType' doesn't exist
+[2024-03-11T00:29:56.812] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Candidate' doesn't exist
+[2024-03-11T00:29:56.979] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-03-11T00:30:19.174] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobType' doesn't exist
+[2024-03-11T00:31:27.503] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Candidate' doesn't exist
+[2024-03-11T00:31:27.584] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-03-11T00:31:34.693] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobType' doesn't exist
+[2024-03-11T00:55:31.711] [ERROR] cheese - Caught exception: Error: read ECONNRESET
+[2024-03-12T16:22:19.084] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.Candidate' doesn't exist
+[2024-03-12T16:22:19.333] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.UserBonuses' doesn't exist
+[2024-03-12T16:22:21.196] [ERROR] cheese - Caught exception: Error: ER_NO_SUCH_TABLE: Table 'myjobs.JobType' doesn't exist
