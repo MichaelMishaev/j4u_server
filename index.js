@@ -445,7 +445,7 @@
   });
   app.get("/api/bonusesByUser",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var sql = `SELECT *
-    FROM UserBonuses WHERE userid=` + req.query.u;
+    FROM userbonuses WHERE userid=` + req.query.u;
     con.query(sql, function (err, result) {
         if (err) throw err;
         res.json(result);
@@ -553,7 +553,7 @@
       const countQuery =  'SELECT COUNT(1) AS count FROM Job WHERE IsImportant = 1 and status=1'
 
       var sql = `INSERT INTO Job
-      (ID,Title,Commission,Company,Description,CompanyDescription,Date,JobType,Locations,Questions,Categories,UserId,AgentDescription, Period,PaymentPeriod, Areas,SubCategory, Status,IsImportant)
+      (ID,Title,Commission,Company,Description,CompanyDescription,Date,jobtype,Locations,Questions,Categories,UserId,AgentDescription, Period,PaymentPeriod, Areas,SubCategory, Status,IsImportant)
        Values(${d.Id},${mysql.escape(d.Title)},${d.Commission},'HR',${mysql.escape(d.Description)},
        ${mysql.escape(d.CompanyDescription)},'${new Date().toDateString()}','${d.JobType}',${mysql.escape(d.Locations)},${mysql.escape(d.Questions)},'${d.Categories}',${d.UserId}, ${mysql.escape(d.AgentDescription)},'${d.Period}','${d.PaymentPeriod}','${d.Areas}','${d.SubCategory}', ${d.Status},${d.IsImportant})
        ON DUPLICATE KEY UPDATE Title=VALUES(Title), Commission=VALUES(Comm
@@ -640,7 +640,7 @@
   });
   app.put("/api/CandidateIsFromPool",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var d = req.body;
-    var sql = `UPDATE Candidate SET IsFromPool = '${d.isFromPool}' where Id=${d.candidateId}`;
+    var sql = `UPDATE candidate SET IsFromPool = '${d.isFromPool}' where Id=${d.candidateId}`;
     con.query(sql, function (err, result) {
         if (err){
             return res.status(500).json(err.code);
@@ -665,7 +665,7 @@
 
     //sendMessageToBot(status,d)
     if(isAddBonus){
-      var bonusSql = `INSERT INTO UserBonuses (UserId,JobCandidateId,BonusAmount,BonusType) VALUES 
+      var bonusSql = `INSERT INTO userbonuses (UserId,JobCandidateId,BonusAmount,BonusType) VALUES 
                       (${d.UserId},${d.jobCandidateId},2,1)
           ON DUPLICATE KEY UPDATE UserId=VALUES(UserId), JobCandidateId=VALUES(JobCandidateId), BonusAmount=VALUES(BonusAmount), BonusType=VALUES(BonusType)`
       con.query(bonusSql, function (err, result) {
@@ -764,7 +764,7 @@
     });
   });
   app.get("/api/candidates",passport.authenticate('jwt', { session: false }), (req, res, next) => {
-      var sql = `SELECT * FROM  Candidate WHERE UserId = ` + req.query.u + ` ORDER BY Id DESC`;
+      var sql = `SELECT * FROM  candidate WHERE UserId = ` + req.query.u + ` ORDER BY Id DESC`;
       con.query(sql,async function (err, result) {
           if (err) throw err;
 
@@ -794,7 +794,7 @@
         const userId = decoded.id;
         var sql = `SELECT c.Id as CandidateId,c.OriginalUserId,c.OriginalCandidateId, Concat(c.FirstName,' ', c.LastName) AS CandidateName, c.City,c.Email,c.PhoneNumber
                   , pcsc.SubCategoryId,ca.Name Categories, cit.Name Locations, a.Name Areas
-                  FROM  Candidate c 
+                  FROM  candidate c 
                   INNER JOIN PoolCandidateSubCategories pcsc on c.Id = pcsc.CandidateId
                   INNER JOIN SubCategories ca on pcsc.SubCategoryId = ca.Id
                   INNER JOIN poolcandidatescities pcc on c.Id = pcc.CandidateId
@@ -853,7 +853,7 @@ app.post("/api/candidate",passport.authenticate('jwt', { session: false }), (req
     try{
       var user = req.body;
       var isPool = req.query.p == 'true' ? 1 : 0;
-      var sql = `INSERT INTO Candidate (FirstName,LastName,City,Email,PhoneNumber,UserId,HasCV,internalComments,IsFromPool) Values(?,?,?,?,?,?,?,?,?)`;
+      var sql = `INSERT INTO candidate (FirstName,LastName,City,Email,PhoneNumber,UserId,HasCV,internalComments,IsFromPool) Values(?,?,?,?,?,?,?,?,?)`;
       if(updateOnDuplicate){
         sql += ` ON DUPLICATE KEY UPDATE FirstName=VALUES(FirstName), City=VALUES(City),
                  Email=VALUES(Email), PhoneNumber=VALUES(PhoneNumber), UserId=VALUES(UserId), HasCV=VALUES(HasCV), internalComments=VALUES(internalComments),
@@ -889,7 +889,7 @@ app.post("/api/candidate",passport.authenticate('jwt', { session: false }), (req
             var originalCandidateId = req.body.originalCandidateId || null;
             var sql = `INSERT INTO candidate(FirstName,LastName,City,Email,PhoneNumber,Summary,HasCV,UserId,FakeEmail,InternalComments,UserRemark,IsFromPool,OriginalUserId,OriginalCandidateId)
             SELECT FirstName,LastName,City,Email,PhoneNumber,Summary,HasCV,${decoded.id},FakeEmail,InternalComments,UserRemark,0,${originalUserId }, ${originalCandidateId}
-            FROM Candidate
+            FROM candidate
             WHERE Id = ${candidateId}`;
             var userData = [user.FirstName,user.LastName,user.City,user.Email,user.PhoneNumber, req.query.u];
             con.query(sql,userData, function (err, result) {
@@ -917,7 +917,7 @@ app.post("/api/candidate",passport.authenticate('jwt', { session: false }), (req
   app.put(" ",passport.authenticate('jwt', { session: false }), (req, res, next) => {
     console.log('in update candidate')
       var user = req.body;
-      var sql = `UPDATE Candidate SET FirstName = ` +mysql.escape(user.FirstName)+ `, LastName = `+ mysql.escape(user.LastName)+`, City = `+mysql.escape(user.City)+`
+      var sql = `UPDATE candidate SET FirstName = ` +mysql.escape(user.FirstName)+ `, LastName = `+ mysql.escape(user.LastName)+`, City = `+mysql.escape(user.City)+`
                 , Email= '`+user.Email+`',PhoneNumber = '`+user.PhoneNumber+`', FileExtension='`+user.FileExtension+`',UserRemark = '`+ user.UserRemark+`', HasCV = `+user.HasCV+`
       WHERE ID = `+user.Id+``;
 console.log("sql: " + sql)
@@ -932,7 +932,7 @@ console.log("sql: " + sql)
       var user = req.body;
       console.log("file extension: " + user.fileExension)
       console.log("cand id: : " + user.candidateId)
-      var sql = `UPDATE Candidate SET FileExtension='`+user.fileExension+`'
+      var sql = `UPDATE candidate SET FileExtension='`+user.fileExension+`'
                 WHERE ID = `+user.candidateId+``;
       con.query(sql, function (err, result) {
           if (err) throw err;
@@ -1079,7 +1079,7 @@ console.log("sql: " + sql)
                   FROM jobcandidatehistory j
                   inner join jobcandidate jc
                   on j.jobCandidateId = jc.Id
-                  inner join Candidate c
+                  inner join candidate c
                   on jc.CandidateId = c.Id
                   WHERE jc.UserId = ${decoded.id} and 
                   j.Status != 'Update from agent'`;
@@ -1169,7 +1169,7 @@ console.log("sql: " + sql)
   app.get("/api/lookups", (req, res, next) => {
     //todo improve to forkjoin
     var data = {}
-    var sql = `SELECT * FROM categories;SELECT * FROM cities;SELECT * FROM areas;SELECT * FROM subcategories;SELECT * FROM jobstatus;SELECT * FROM JobType`;
+    var sql = `SELECT * FROM categories;SELECT * FROM cities;SELECT * FROM areas;SELECT * FROM subcategories;SELECT * FROM jobstatus;SELECT * FROM jobtype`;
       con.query(sql, function (err, result) {
         if (err) throw err;
         data.categories = result[0];
